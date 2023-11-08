@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         val mainFragment = MainFragment()
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,mainFragment)
-            .commit()
+        //supportFragmentManager.beginTransaction().replace(R.id.fragment_container,mainFragment).commit()
     }
 }

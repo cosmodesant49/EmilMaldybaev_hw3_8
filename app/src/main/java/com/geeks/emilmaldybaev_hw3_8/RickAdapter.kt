@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.geeks.emilmaldybaev_hw3_8.databinding.ItemRickBinding
 
-class RickAdapter(private val rickList: List<Rick>) : RecyclerView.Adapter<RickAdapter.ViewHolder>() {
+class RickAdapter(val rickList: List<Rick>, val onClick:(rick:Rick)->Unit) : RecyclerView.Adapter<RickAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemRickBinding
 
@@ -21,10 +21,12 @@ class RickAdapter(private val rickList: List<Rick>) : RecyclerView.Adapter<RickA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val rick = rickList[position]
-        Glide.with(binding.ivPhoto.context).load(rick.photo).into(binding.ivPhoto)
-        binding.tvStatus.text = rick.status
-        binding.tvName.text = rick.name
+        //val rick = rickList[position]
+        //Glide.with(binding.ivPhoto.context).load(rick.photo).into(binding.ivPhoto)
+        //binding.tvStatus.text = rick.status
+        //binding.tvName.text = rick.name
+
+        holder.bind(rickList[position])
 
 
     }
